@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+  /*uso de variables para reutilizar codigo, y evitar la repeticion de este*/
+    --color-primario:#854836;
+    --color-secundario:#f7f7f7;
+    --color-terciario: #ffb22c;
+    --color-hover:#272727;
+
+    --fuente-Montserrat:"Montserrat", sans-serif;
+    --fuente-krona:"Krona One", serif;
+}
+
+/*formatear los parametros, para dejar limpia la pagina, antes de cada proyecto*/
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color:var(--color-primario);
+    color:var(--color-secundario);
+    box-sizing: border-box;
+}
+
+.header{
+    padding: 2% 0 0 15%;
+}
+
+.header_menu{
+    display: flex;
+    gap: 50px;
+}
+
+.header_menu_link{
+    font-family:var(--fuente-Montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:var(--color-terciario);
+    text-decoration: none;
+}
+
+.presentacion{
+    display:flex;
+    align-items: center;
+    padding: 5% 15%;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.presentacion_contenido{
+    width: 50%; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.presentacion_contenido_titulo{
+    font-size: 2.25rem;
+    font-family: var(--fuente-krona);  
+  }
+
+  .titulo-destaque{
+    color: var(--color-terciario);
+}
+
+  .presentacion_contenido_texto{
+    font-size: 1.5rem;
+    font-family:var(--fuente-Montserrat);
+}
+
+.presentacion_enlace{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items:center;
+    gap: 30px;
+}
+
+.presentacion_enlace_subtitulo{
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.presentacion_enlaces_link{
+    width: 50%;
+    text-align: center;
+    padding: 21.5px 0; 
+    border-radius: 8px;
+    font-family:var(--fuente-Montserrat);
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--color-secundario);
+    border: 2px solid var(--color-terciario);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.presentacion_enlaces_link:hover{
+    background-color:var(--color-hover);
+}
+/*el % hace que el hijo se adapte a la medida del padre, el px es fijo y no
+se puede adaptar para moviles*/ 
+.presentacion_imagen{
+    width: 50%;
+}
+
+
+.footer{
+    background-color:var(--color-terciario);
+    padding: 20px;
+    color: var(--color-primario);
+    text-align: center;
+    font-family: var(--fuente-Montserrat);
+    font-size: 1.1rem;
+    font-weight: 450;
+}
+
+/* ajustes para dispositivos moviles */
+@media (max-width:1200px){
+/* se reduce el padding del 15% al 10% para moviles*/
+    .header{
+        padding: 10%;
+    }
+
+    .header_menu{
+        justify-content: center;
+    }
+
+    .presentacion{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+/* aqui tambien se puede usar para la propiedad width el valor 100% */
+    .presentacion_contenido{
+        width: auto;
+    }
+}
+
